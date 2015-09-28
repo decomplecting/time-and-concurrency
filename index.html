@@ -175,6 +175,123 @@
                         <img src="res/cat.hammock.gif">
                     </section>
                 </section>
+                <section>
+                    <h4>Clojure(Script)</h4>
+                    <section>
+                        <ul>
+                            <li>Emphasis on pure functions</li>
+                            <li>Persistent data structures</li>
+                            <li>Side-effects are allowed</li>
+                            <li>State is <em>managed</em></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <p>
+                            Web programming <strong>IS</strong> distributed
+                            systems programming.
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            Even in the simplest web application, we need to
+                            consider at least 3 things: the server, the browser,
+                            and the user.
+                        </p>
+                        <img src="res/ubs.png">
+                    </section>
+                    <section>
+                        <p>One language, two hosts:</p>
+                        <ul>
+                            <li>JVM (server)</li>
+                            <li>JS (browser)</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <p>Code Sharing</p>
+                        <pre>
+                            <code>
+(defn str->int [s]
+  #?(:clj  (java.lang.Integer/parseInt s)
+     :cljs (js/parseInt s)))
+                            </code>
+                        </pre>
+                    </section>
+                </section>
+                <section>
+                    <h4>Datomic</h4>
+                    <section>
+                        <ul>
+                            <li>
+                                EAVT tuple store database.
+                            </li>
+                            <li>
+                                ACID transactions.
+                            </li>
+                            <li>
+                                Immutable data = strong consistency +
+                                horizontal read scalability.
+                            </li>
+                            <li>
+                                Writes are not update-in-place; all data is
+                                retained by default.
+                            </li>
+                            <li>
+                                Makes <em>time</em> part of the database itself.
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h5>Big win:</h5>
+                        <h2>TIME TRAVEL</h2>
+                    </section>
+                    <section>
+                        <p>
+                            Since Datomic retains the history of the db state,
+                            we can query the db as-of any given point in time.
+                        </p>
+                        <p>
+                            Since it treats the db as a <em>value,</em> and uses
+                            the same persistent data structures as
+                            Clojure itself, we can also <em>query the future,</em>
+                            by joining arbitrary data to a given db value.
+                        </p>
+
+                    </section>
+                    <section>
+                        <h5>It gets better...</h5>
+                        <pre><code>
+(q '[:find ?title
+     :where
+     [?e :movie/year 1987]
+     [?e :movie/title ?title]])
+                        </code></pre>
+                        <p>
+                            Datomic's datalog queries are just
+                            <em>vectors,</em> which means they can be
+                            passed around like any other of Clojure's
+                            persistent data structures... even from the
+                            browser to the server.
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <h4>Putting it all together</h4>
+                    <section>
+                        <img src="res/chart.png" class="">
+                    </section>
+                    <section>
+                        <ul>
+                            <li>
+                                Pure functions acting on immutable data
+                                structures shared between client and
+                                server.
+                            </li>
+                            <li>
+
+                            </li>
+
+                    </section>
+                </section>
                 <!--end stuff-->
                 <section>
                     <p>Baltimore Clojure Meetup</p>

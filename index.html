@@ -10,7 +10,7 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
         <link rel="stylesheet" href="css/reveal.css">
-        <link rel="stylesheet" href="css/theme/night.css" id="theme">
+        <link rel="stylesheet" href="css/theme/league.css" id="theme">
 
         <!-- Code syntax highlighting -->
         <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -40,6 +40,13 @@
              margin: auto;
              text-align: center;
          }
+         img.scaled {
+             max-height: 512px;
+             margin: auto;
+         }
+         p.large {
+             font-size: 72pt;
+         }
         </style>
 
     </head>
@@ -53,6 +60,11 @@
                     <h1>Time and Concurrency</h1>
                     <h3>Programming paradigms and the failure of state</h3>
                     <p>Jason Lewis</p>
+                    <p>
+                        <a href="https://twitter.com/canweriotnow">
+                            @canweriotnow
+                        </a>
+                    </p>
                     <p>Yet Analytics</p>
                 </section>
                 <section>
@@ -176,7 +188,7 @@
                     </section>
                 </section>
                 <section>
-                    <h4>Clojure(Script)</h4>
+                    <h2>Clojure(Script)</h2>
                     <section>
                         <ul>
                             <li>Emphasis on pure functions</li>
@@ -218,7 +230,7 @@
                     </section>
                 </section>
                 <section>
-                    <h4>Datomic</h4>
+                    <h2>Datomic</h2>
                     <section>
                         <ul>
                             <li>
@@ -275,9 +287,9 @@
                     </section>
                 </section>
                 <section>
-                    <h4>Putting it all together</h4>
+                    <h3>Putting it all together</h3>
                     <section>
-                        <img src="res/chart.png" class="">
+                        <img src="res/chart.png" class="scaled">
                     </section>
                     <section>
                         <ul>
@@ -287,9 +299,14 @@
                                 server.
                             </li>
                             <li>
-
+                                Peers keep a hot copy of the db as a value in memory
                             </li>
-
+                            <li>
+                                Reads and writes are orthogonal
+                            </li>
+                    </section>
+                    <section>
+                        <p class="large"">Time = λ</p>
                     </section>
                 </section>
                 <!--end stuff-->
